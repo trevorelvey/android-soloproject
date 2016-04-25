@@ -9,4 +9,197 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.epicodus.tippeligaen.TableActivity">
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Club"
+                android:padding="3dip" />
+            <TextView
+                android:text="Points"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Rosenborg"
+                android:padding="3dip" />
+            <TextView
+                android:text="18"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Odd"
+                android:padding="3dip" />
+            <TextView
+                android:text="14"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Molde"
+                android:padding="3dip" />
+            <TextView
+                android:text="14"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Brann"
+                android:padding="3dip" />
+            <TextView
+                android:text="14"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Stromgodset"
+                android:padding="3dip" />
+            <TextView
+                android:text="13"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Lillestrøm"
+                android:padding="3dip" />
+            <TextView
+                android:text="10"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Haugesund"
+                android:padding="3dip" />
+            <TextView
+                android:text="10"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Viking"
+                android:padding="3dip" />
+            <TextView
+                android:text="10"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Sarpsborg"
+                android:padding="3dip" />
+            <TextView
+                android:text="9"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Aalesund"
+                android:padding="3dip" />
+            <TextView
+                android:text="7"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Bodø/Glimt"
+                android:padding="3dip" />
+            <TextView
+                android:text="7"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Sogndal"
+                android:padding="3dip" />
+            <TextView
+                android:text="7"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Vålerenga"
+                android:padding="3dip" />
+            <TextView
+                android:text="6"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Tromso"
+                android:padding="3dip" />
+            <TextView
+                android:text="6"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Stabaek"
+                android:padding="3dip" />
+            <TextView
+                android:text="4"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Start"
+                android:padding="3dip" />
+            <TextView
+                android:text="3"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+
+    </TableLayout>
+
 </RelativeLayout>
