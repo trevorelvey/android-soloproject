@@ -21,21 +21,26 @@
                 android:value="com.epicodus.tippeligaen.MainActivity" />
         </activity>
         <activity android:name=".ClubActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.epicodus.tippeligaen.MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.tippeligaen.MainActivity" />
         </activity>
         <activity android:name=".LoginActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.epicodus.tippeligaen.MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.tippeligaen.MainActivity" />
         </activity>
         <activity android:name=".FixtureActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.epicodus.tippeligaen.MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.tippeligaen.MainActivity" />
         </activity>
-
+        <activity android:name=".CreateAccountActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.tippeligaen.LoginActivity" />
+        </activity>
+        <activity android:name=".ConfirmAccountActivity"></activity>
     </application>
 
 </manifest>

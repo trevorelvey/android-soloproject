@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Tippeligaen</string>
+    <string-array name="favorite_teams">
+        <item>Aalesund</item>
+        <item>Bodø/Glimt</item>
+        <item>Brann</item>
+        <item>Haugesund</item>
+        <item>Lillestrom</item>
+        <item>Molde</item>
+        <item>Odd</item>
+        <item>Rosenborg</item>
+        <item>Sarpsborg 08</item>
+        <item>Sogndal</item>
+        <item>Stabæk</item>
+        <item>Start</item>
+        <item>Strømgodset</item>
+        <item>Tromsø</item>
+        <item>Vålerenga</item>
+    </string-array>
 </resources>
