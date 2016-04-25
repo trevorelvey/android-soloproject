@@ -40,7 +40,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.tippeligaen.LoginActivity" />
         </activity>
-        <activity android:name=".ConfirmAccountActivity"></activity>
+        <activity android:name=".ConfirmAccountActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.tippeligaen.CreateAccountActivity" />
+        </activity>
     </application>
 
 </manifest>
