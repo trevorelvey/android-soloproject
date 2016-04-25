@@ -15,10 +15,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".TableActivity" />
-        <activity android:name=".FixtureActivity" />
-        <activity android:name=".ClubActivity"></activity>
+        <activity android:name=".TableActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.tippeligaen.MainActivity" />
+        </activity>
+        <activity android:name=".ClubActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.epicodus.tippeligaen.MainActivity" />
+        </activity>
+        <activity android:name=".LoginActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.epicodus.tippeligaen.MainActivity" />
+        </activity>
+        <activity android:name=".FixtureActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.epicodus.tippeligaen.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>
