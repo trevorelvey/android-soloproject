@@ -1,10 +1,12 @@
-package com.epicodus.tippeligaen;
+package com.epicodus.tippeligaen.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.epicodus.tippeligaen.R;
 
 public class LoginActivity extends AppCompatActivity {
     private Button mCreateAccountButton;

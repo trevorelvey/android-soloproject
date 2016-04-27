@@ -1,7 +1,9 @@
-package com.epicodus.tippeligaen;
+package com.epicodus.tippeligaen.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.epicodus.tippeligaen.R;
 
 public class TableActivity extends AppCompatActivity {
 
