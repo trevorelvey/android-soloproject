@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tippeligaen</string>
+    <string name="app_name">Eredivisie</string>
     <string-array name="favorite_teams">
         <item>Aalesund</item>
         <item>Bodø/Glimt</item>
