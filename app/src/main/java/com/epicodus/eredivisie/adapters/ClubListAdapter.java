@@ -27,6 +27,7 @@ public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.ClubVi
     @Override
     public ClubListAdapter.ClubViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.club_list_item, parent, false);
+
         ClubViewHolder viewHolder = new ClubViewHolder(view);
         return viewHolder;
     }

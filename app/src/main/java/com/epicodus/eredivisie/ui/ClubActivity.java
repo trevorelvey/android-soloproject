@@ -28,10 +28,12 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class ClubActivity extends AppCompatActivity {
+    public static final String TAG = ClubActivity.class.getSimpleName();
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private ClubListAdapter mAdapter;
+
     public ArrayList<Club> mClubs = new ArrayList<>();
-    public static final String TAG = ClubActivity.class.getSimpleName();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,5 +1,7 @@
 package com.epicodus.eredivisie.services;
 
+import android.util.Log;
+
 import com.epicodus.eredivisie.Constants;
 import com.epicodus.eredivisie.models.Club;
 
@@ -22,10 +24,9 @@ public class ApiService {
     public static void listClubs(Callback callback) {
         String API_KEY = Constants.API_KEY;
 
-        OkHttpClient client = new OkHttpClient.Builder()
-                .build();
+        OkHttpClient client = new OkHttpClient();
 
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.API_KEY).newBuilder();
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.LEAGUE_URL).newBuilder();
         String url = urlBuilder.build().toString();
 
         Request request = new Request.Builder()
@@ -48,6 +49,8 @@ public class ApiService {
                     JSONObject clubJSON = teamsJSON.getJSONObject(i);
                     String name = clubJSON.getString("name");
                     String crest = clubJSON.getString("crestUrl");
+                    Club club = new Club(name, crest);
+                    clubs.add(club);
                 }
             }
         } catch (JSONException e) {
