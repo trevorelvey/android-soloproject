@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.epicodus.tippeligaen">
+    package="com.epicodus.eredivisie">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Eredivisie"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.epicodus.eredivisie.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TableActivity">
+        <activity android:name="com.epicodus.eredivisie.TableActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.tippeligaen.MainActivity" />
+                android:value="com.epicodus.eredivisie.MainActivity" />
         </activity>
-        <activity android:name=".ClubActivity">
+        <activity android:name="com.epicodus.eredivisie.ClubActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.tippeligaen.MainActivity" />
+                android:value="com.epicodus.eredivisie.MainActivity" />
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name="com.epicodus.eredivisie.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.tippeligaen.MainActivity" />
+                android:value="com.epicodus.eredivisie.MainActivity" />
         </activity>
-        <activity android:name=".FixtureActivity">
+        <activity android:name="com.epicodus.eredivisie.FixtureActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.tippeligaen.MainActivity" />
+                android:value="com.epicodus.eredivisie.MainActivity" />
         </activity>
-        <activity android:name=".CreateAccountActivity">
+        <activity android:name="com.epicodus.eredivisie.CreateAccountActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.tippeligaen.LoginActivity" />
+                android:value="com.epicodus.eredivisie.LoginActivity" />
         </activity>
-        <activity android:name=".ConfirmAccountActivity">
+        <activity android:name="com.epicodus.eredivisie.ConfirmAccountActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.tippeligaen.CreateAccountActivity" />
+                android:value="com.epicodus.eredivisie.CreateAccountActivity" />
         </activity>
     </application>
 

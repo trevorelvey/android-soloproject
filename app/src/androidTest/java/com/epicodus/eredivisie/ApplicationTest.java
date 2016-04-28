@@ -1,4 +1,4 @@
-package com.epicodus.tippeligaen;
+package com.epicodus.eredivisie;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package com.epicodus.tippeligaen;
+package com.epicodus.eredivisie;
 
 import org.junit.Test;
 

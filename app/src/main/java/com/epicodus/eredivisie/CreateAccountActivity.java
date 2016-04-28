@@ -1,16 +1,14 @@
-package com.epicodus.tippeligaen;
+package com.epicodus.eredivisie;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class CreateAccountActivity extends AppCompatActivity {
