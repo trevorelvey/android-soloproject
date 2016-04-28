@@ -1,10 +1,12 @@
-package com.epicodus.eredivisie;
+package com.epicodus.eredivisie.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.epicodus.eredivisie.R;
 
 public class LoginActivity extends AppCompatActivity {
     private Button mCreateAccountButton;

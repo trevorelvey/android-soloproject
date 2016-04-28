@@ -1,7 +1,8 @@
 package com.epicodus.eredivisie;
 
-/**
- * Created by Guest on 4/28/16.
- */
 public class Constants {
+    public static final String API_KEY = BuildConfig.API_KEY;
+
+    public static final String LEAGUE_URL = "http://api.football-data.org/v1/soccerseasons/404/teams";
+
 }
