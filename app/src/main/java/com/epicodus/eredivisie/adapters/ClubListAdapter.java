@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.epicodus.eredivisie.R;
 import com.epicodus.eredivisie.models.Club;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -58,6 +59,7 @@ public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.ClubVi
 
         public void bindClub(Club club) {
             mClubNameTextView.setText(club.getName());
+            Picasso.with(mContext).load(club.getCrest()).into(mCrestImageView);
         }
     }
 }
