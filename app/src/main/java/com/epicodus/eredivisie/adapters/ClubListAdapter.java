@@ -1,6 +1,7 @@
 package com.epicodus.eredivisie.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 
 import com.epicodus.eredivisie.R;
 import com.epicodus.eredivisie.models.Club;
+import com.epicodus.eredivisie.ui.ClubDetailActivity;
 import com.squareup.picasso.Picasso;
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -55,6 +58,17 @@ public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.ClubVi
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    int itemPosition = getLayoutPosition();
+                    Intent intent = new Intent(mContext, ClubDetailActivity.class);
+                    intent.putExtra("position", itemPosition + "");
+                    intent.putExtra("clubs", Parcels.wrap(mClubs));
+                    mContext.startActivity(intent);
+                }
+            });
         }
 
         public void bindClub(Club club) {
