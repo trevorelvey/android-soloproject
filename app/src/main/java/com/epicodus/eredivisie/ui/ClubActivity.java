@@ -1,4 +1,4 @@
-package com.epicodus.tippeligaen.ui;
+package com.epicodus.eredivisie.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.epicodus.tippeligaen.R;
+import com.epicodus.eredivisie.R;
 
 public class ClubActivity extends AppCompatActivity {
     private ListView mListView;

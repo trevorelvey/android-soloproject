@@ -1,4 +1,4 @@
-package com.epicodus.tippeligaen;
+package com.epicodus.eredivisie;
 
 public class Constants {
     public static final String API_KEY = BuildConfig.API_KEY;

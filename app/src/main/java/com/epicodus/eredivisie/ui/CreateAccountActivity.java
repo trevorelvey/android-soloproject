@@ -1,4 +1,4 @@
-package com.epicodus.tippeligaen.ui;
+package com.epicodus.eredivisie.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.epicodus.tippeligaen.R;
+import com.epicodus.eredivisie.R;
 
 import butterknife.ButterKnife;
 
