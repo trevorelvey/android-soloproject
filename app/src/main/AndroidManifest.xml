@@ -47,7 +47,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.CreateAccountActivity" />
         </activity>
-        <activity android:name=".ui.ClubDetailActivity"></activity>
+        <activity android:name=".ui.ClubDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.ClubActivity"/>
+        </activity>
     </application>
 
 </manifest>
