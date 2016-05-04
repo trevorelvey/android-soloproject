@@ -1,8 +1,18 @@
 package com.epicodus.eredivisie;
 
 public class Constants {
-    public static final String API_KEY = BuildConfig.API_KEY;
 
+    //API
+    public static final String API_KEY = BuildConfig.API_KEY;
     public static final String LEAGUE_URL = "http://api.football-data.org/v1/soccerseasons/404/teams";
+
+    //FIREBASE
+    public static final String FIREBASE_URL = BuildConfig.FIREBASE_ROOT_URL;
+
+    //USER AUTHENTICATION
+    public static final String FIREBASE_LOCATION_USERS = "users";
+    public static final String FIREBASE_PROPERTY_EMAIL = "email";
+    public static final String KEY_UID = "UID";
+    public static final String FIREBASE_URL_USERS = FIREBASE_URL + "/" + FIREBASE_LOCATION_USERS;
 
 }

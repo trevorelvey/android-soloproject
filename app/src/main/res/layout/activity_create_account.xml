@@ -3,69 +3,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.CreateAccountActivity">
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextCreateUsername"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:hint="Create Username" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editTextCreatePassword"
-        android:layout_below="@+id/editTextCreateUsername"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentStart="true"
-        android:hint="Create Password" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editTextConfirmPassword"
-        android:layout_below="@+id/editTextCreatePassword"
-        android:layout_centerHorizontal="true"
-        android:hint="Confirm Password" />
-
-    <Spinner
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerFavoriteSelect"
-        android:longClickable="true"
-        android:layout_below="@+id/textViewClubSelect"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    tools:context="com.epicodus.eredivisie.ui.CreateAccountActivity"
+    android:background="@color/colorPrimaryLight">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Select Your Favorite Club:"
-        android:id="@+id/textViewClubSelect"
-        android:layout_below="@+id/editTextConfirmPassword"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:id="@+id/buttonAccountConfirm"
-        android:layout_alignParentBottom="true"
+        android:text="Sign up"
+        android:id="@+id/textView4"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="@color/colorAccent"
+        android:gravity="center"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorPrimaryLight" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="55dp"
+        android:paddingBottom="55dp"
+        android:background="@color/colorPrimaryLight"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryLight"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/textView4">
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Name"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:hint="Password"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/confirmPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:hint="Confirm password"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/createUserButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Sign up"
+            android:background="@color/colorPrimaryDark"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/colorPrimaryLight" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="Already have an account? Log in here!"
+            android:id="@+id/loginTextView"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
 
 </RelativeLayout>
