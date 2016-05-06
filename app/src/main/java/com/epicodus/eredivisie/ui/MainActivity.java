@@ -1,9 +1,12 @@
 package com.epicodus.eredivisie.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,10 +14,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.epicodus.eredivisie.Constants;
 import com.epicodus.eredivisie.R;
+import com.epicodus.eredivisie.models.User;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -24,7 +32,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.buttonFixtures) Button mButtonFixtures;
     @Bind(R.id.buttonClubs) Button mButtonClubs;
     @Bind(R.id.websiteButton) Button mWebsiteButton;
+    @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
+    private ValueEventListener mUserRefListener;
+    private Firebase mUserRef;
+    private SharedPreferences mSharedPreferences;
     private Firebase mFirebaseRef;
+    private String mUId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +71,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         mWebsiteButton.setOnClickListener(this);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mUId = mSharedPreferences.getString(Constants.KEY_UID, null);
+        mUserRef = new Firebase(Constants.FIREBASE_URL_USERS).child(mUId);
+
+        mUserRefListener = mUserRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                mWelcomeTextView.setText("Welcome, " + user.getUsername() + "!");
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+            }
+        });
     }
 
     @Override
