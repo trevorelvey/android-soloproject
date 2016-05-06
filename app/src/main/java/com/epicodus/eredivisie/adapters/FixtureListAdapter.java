@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.epicodus.eredivisie.R;
 import com.epicodus.eredivisie.models.Fixture;
+import com.epicodus.eredivisie.ui.FixtureDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -65,6 +66,18 @@ public class FixtureListAdapter extends RecyclerView.Adapter<FixtureListAdapter.
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    int itemPosition = getLayoutPosition();
+                    Intent intent = new Intent(mContext, FixtureDetailActivity.class);
+                    intent.putExtra("position", itemPosition + "");
+                    intent.putExtra("fixtures", Parcels.wrap(mFixtures));
+                    mContext.startActivity(intent);
+                }
+            });
         }
 
         public void bindFixture(Fixture fixture) {

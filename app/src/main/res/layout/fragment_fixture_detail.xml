@@ -3,6 +3,8 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    tools:context="com.epicodus.eredivisie.ui.FixtureDetailFragment">
+
 
     <LinearLayout
         android:orientation="vertical"
