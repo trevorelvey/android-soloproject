@@ -68,7 +68,7 @@ public class FixtureListAdapter extends RecyclerView.Adapter<FixtureListAdapter.
         }
 
         public void bindFixture(Fixture fixture) {
-            mMatchDate.setText(SimpleDateFormat(fixture.getDate());
+            mMatchDate.setText(fixture.getDate());
             mHomeGoalsTextView.setText(fixture.getGoalsHome());
             mAwayGoalsTextView.setText(fixture.getGoalsAway());
             mHomeTeamName.setText(fixture.getHomeTeam());
