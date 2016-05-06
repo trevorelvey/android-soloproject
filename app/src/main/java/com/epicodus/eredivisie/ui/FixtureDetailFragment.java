@@ -7,9 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.epicodus.eredivisie.Constants;
 import com.epicodus.eredivisie.R;
 import com.epicodus.eredivisie.models.Fixture;
+import com.firebase.client.Firebase;
 
 import org.parceler.Parcels;
 
@@ -44,6 +47,7 @@ public class FixtureDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fixture_detail, container, false);
         ButterKnife.bind(this, view);
+        mSaveFixtureButton.setOnClickListener(this);
 
         mMatchDate.setText(mFixture.getDate());
         mHomeGoals.setText(mFixture.getGoalsHome());
@@ -52,6 +56,15 @@ public class FixtureDetailFragment extends Fragment {
         mAwayTeamName.setText(mFixture.getAwayTeam());
 
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mSavedFixtureButton) {
+            Firebase ref = new Firebase(Constants.FIREBASE_URL_FIXTURES);
+            ref.push().setValue(mFixture);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

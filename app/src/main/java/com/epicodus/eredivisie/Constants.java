@@ -9,6 +9,8 @@ public class Constants {
 
     //FIREBASE
     public static final String FIREBASE_URL = BuildConfig.FIREBASE_ROOT_URL;
+    public static final String FIREBASE_LOCATION_FIXTURES = "fixtures";
+    public static final String FIREBASE_URL_FIXTURES = FIREBASE_URL + "/" + FIREBASE_LOCATION_FIXTURES;
 
     //USER AUTHENTICATION
     public static final String FIREBASE_LOCATION_USERS = "users";
