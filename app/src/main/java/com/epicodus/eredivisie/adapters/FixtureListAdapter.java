@@ -15,6 +15,7 @@ import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import butterknife.Bind;
@@ -47,6 +48,8 @@ public class FixtureListAdapter extends RecyclerView.Adapter<FixtureListAdapter.
     }
 
     public class FixtureViewHolder extends RecyclerView.ViewHolder {
+        @Bind(R.id.matchDate)
+        TextView mMatchDate;
         @Bind(R.id.homeGoalsTextView)
         TextView mHomeGoalsTextView;
         @Bind(R.id.awayGoalsTextView)
@@ -65,6 +68,7 @@ public class FixtureListAdapter extends RecyclerView.Adapter<FixtureListAdapter.
         }
 
         public void bindFixture(Fixture fixture) {
+            mMatchDate.setText(SimpleDateFormat(fixture.getDate());
             mHomeGoalsTextView.setText(fixture.getGoalsHome());
             mAwayGoalsTextView.setText(fixture.getGoalsAway());
             mHomeTeamName.setText(fixture.getHomeTeam());
