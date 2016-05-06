@@ -31,7 +31,7 @@ public class Fixture {
         return mAwayTeam;
     }
     public String getGoalsHome() {
-        return mHomeTeam;
+        return mGoalsHome;
     }
     public String getGoalsAway() {
         return mGoalsAway;

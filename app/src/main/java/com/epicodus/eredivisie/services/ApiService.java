@@ -85,14 +85,15 @@ public class ApiService {
             String jsonData = response.body().string();
             if(response.isSuccessful()) {
                 JSONObject dataJSON = new JSONObject(jsonData);
-                JSONArray matchesJSON = dataJSON.getJSONArray("teams");
+                JSONArray matchesJSON = dataJSON.getJSONArray("fixtures");
                 for (int i = 0; i < matchesJSON.length(); i++) {
                     JSONObject clubJSON = matchesJSON.getJSONObject(i);
                     String date = clubJSON.getString("date");
                     String homeTeam = clubJSON.getString("homeTeamName");
                     String awayTeam = clubJSON.getString("awayTeamName");
-                    String goalsHome = clubJSON.getString("goalsHomeTeam");
-                    String goalsAway = clubJSON.getString("goalsAwayTeam");
+                    JSONObject resultJSON = clubJSON.getJSONObject("result");
+                    String goalsHome = resultJSON.getString("goalsHomeTeam");
+                    String goalsAway = resultJSON.getString("goalsAwayTeam");
                     Fixture fixture = new Fixture(date, homeTeam, awayTeam,goalsHome, goalsAway);
                     fixtures.add(fixture);
                 }
