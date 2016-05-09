@@ -65,4 +65,15 @@
         android:layout_marginTop="35dp"
         android:layout_below="@+id/buttonClubs"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="My Fixtures"
+        android:id="@+id/savedFixtureButton"
+        android:textColor="@color/colorPrimaryLight"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/websiteButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

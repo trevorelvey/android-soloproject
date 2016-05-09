@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class FixtureListAdapter extends RecyclerView.Adapter<FixtureListAdapter.FixtureViewHolder> {
+public class FixtureListAdapter extends RecyclerView.Adapter<FixtureViewHolder> {
     private ArrayList<Fixture> mFixtures = new ArrayList<>();
     private Context mContext;
 
@@ -31,15 +31,15 @@ public class FixtureListAdapter extends RecyclerView.Adapter<FixtureListAdapter.
         mFixtures = fixtures;
     }
     @Override
-    public FixtureListAdapter.FixtureViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FixtureViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fixture_list_item, parent, false);
 
-        FixtureViewHolder viewHolder = new FixtureViewHolder(view);
+        FixtureViewHolder viewHolder = new FixtureViewHolder(view, mFixtures);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(FixtureListAdapter.FixtureViewHolder holder, int position) {
+    public void onBindViewHolder(FixtureViewHolder holder, int position) {
         holder.bindFixture(mFixtures.get(position));
     }
 
@@ -48,45 +48,5 @@ public class FixtureListAdapter extends RecyclerView.Adapter<FixtureListAdapter.
         return mFixtures.size();
     }
 
-    public class FixtureViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.matchDate)
-        TextView mMatchDate;
-        @Bind(R.id.homeGoalsTextView)
-        TextView mHomeGoalsTextView;
-        @Bind(R.id.awayGoalsTextView)
-        TextView mAwayGoalsTextView;
-        @Bind(R.id.homeTeamName)
-        TextView mHomeTeamName;
-        @Bind(R.id.awayTeamName)
-        TextView mAwayTeamName;
-        private Context mContext;
 
-
-        public FixtureViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-            mContext = itemView.getContext();
-            ButterKnife.bind(this, itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    int itemPosition = getLayoutPosition();
-                    Intent intent = new Intent(mContext, FixtureDetailActivity.class);
-                    intent.putExtra("position", itemPosition + "");
-                    intent.putExtra("fixtures", Parcels.wrap(mFixtures));
-                    mContext.startActivity(intent);
-                }
-            });
-        }
-
-        public void bindFixture(Fixture fixture) {
-            mMatchDate.setText(fixture.getDate());
-            mHomeGoalsTextView.setText(fixture.getGoalsHome());
-            mAwayGoalsTextView.setText(fixture.getGoalsAway());
-            mHomeTeamName.setText(fixture.getHomeTeam());
-            mAwayTeamName.setText(fixture.getAwayTeam());
-
-        }
-    }
 }

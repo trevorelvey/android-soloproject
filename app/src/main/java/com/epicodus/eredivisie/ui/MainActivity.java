@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.buttonClubs) Button mButtonClubs;
     @Bind(R.id.websiteButton) Button mWebsiteButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
+    @Bind(R.id.savedFixtureButton) Button mSavedFixtureButton;
     private ValueEventListener mUserRefListener;
     private Firebase mUserRef;
     private SharedPreferences mSharedPreferences;
@@ -87,6 +88,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onCancelled(FirebaseError firebaseError) {
             }
         });
+
+        mSavedFixtureButton.setOnClickListener(this);
     }
 
     @Override
@@ -124,6 +127,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent webIntent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse("http://www.eredivisie.nl/"));
             startActivity(webIntent);
+        }
+        if (v == mSavedFixtureButton) {
+            Intent intent = new Intent(MainActivity.this, SavedFixtureListActivity.class);
+            startActivity(intent);
         }
     }
 }

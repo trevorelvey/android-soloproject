@@ -4,36 +4,36 @@ import org.parceler.Parcel;
 
 @Parcel
 public class Fixture {
-    private String Date;
-    private String HomeTeam;
-    private String AwayTeam;
-    private String GoalsHome;
-    private String GoalsAway;
+    private String date;
+    private String homeTeam;
+    private String awayTeam;
+    private String goalsHome;
+    private String goalsAway;
 
     public Fixture() {}
 
     public Fixture(String date, String homeTeam, String awayTeam, String goalsHome, String goalsAway) {
-        this.Date = date;
-        this.HomeTeam = homeTeam;
-        this.AwayTeam = awayTeam;
-        this.GoalsHome = goalsHome;
-        this.GoalsAway = goalsAway;
+        this.date = date;
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.goalsHome = goalsHome;
+        this.goalsAway = goalsAway;
 
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
     public String getHomeTeam() {
-        return HomeTeam;
+        return homeTeam;
     }
     public String getAwayTeam() {
-        return AwayTeam;
+        return awayTeam;
     }
     public String getGoalsHome() {
-        return GoalsHome;
+        return goalsHome;
     }
     public String getGoalsAway() {
-        return GoalsAway;
+        return goalsAway;
     }
 }

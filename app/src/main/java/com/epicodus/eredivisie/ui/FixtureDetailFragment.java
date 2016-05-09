@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +20,13 @@ import org.parceler.Parcels;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class FixtureDetailFragment extends Fragment {
+public class FixtureDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.matchDate) TextView mMatchDate;
     @Bind(R.id.homeTeamName) TextView mHomeTeamName;
     @Bind(R.id.awayTeamName) TextView mAwayTeamName;
     @Bind(R.id.homeGoalsTextView) TextView mHomeGoals;
     @Bind(R.id.awayGoalsTextView) TextView mAwayGoals;
+    @Bind(R.id.saveFixtureButton) TextView mSaveFixtureButton;
 
     private Fixture mFixture;
 
@@ -60,11 +62,10 @@ public class FixtureDetailFragment extends Fragment {
 
     @Override
     public void onClick(View v) {
-        if (v == mSavedFixtureButton) {
+        if (v == mSaveFixtureButton) {
             Firebase ref = new Firebase(Constants.FIREBASE_URL_FIXTURES);
             ref.push().setValue(mFixture);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }
-
 }

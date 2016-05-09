@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Home Team"
             android:id="@+id/homeTeamName"
-            android:layout_below="@+id/restaurantNameTextView"
+            android:layout_below="@+id/matchDate"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="14dp"
