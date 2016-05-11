@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,6 +21,7 @@ import com.epicodus.eredivisie.models.Club;
 import com.epicodus.eredivisie.services.ApiService;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -74,6 +76,16 @@ public class ClubActivity extends AppCompatActivity {
         });
     }
 
+    private ArrayList<Club> searchClubs(String query) {
+        ArrayList<Club> clubs = new ArrayList<>();
+        for (Club club : mClubs) {
+            if (club.getName().contains(query)) {
+                clubs.add(club);
+            }
+        }
+        return clubs;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -86,7 +98,13 @@ public class ClubActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
             @Override
             public boolean onQueryTextSubmit(String query) {
-                getClubs();
+                ArrayList<Club> clubs = searchClubs(query);
+                mAdapter = new ClubListAdapter(getApplicationContext(), clubs);
+                mRecyclerView.setAdapter(mAdapter);
+                RecyclerView.LayoutManager layoutManager =
+                        new LinearLayoutManager(ClubActivity.this);
+                mRecyclerView.setLayoutManager(layoutManager);
+                mRecyclerView.setHasFixedSize(true);
                 return false;
             }
             @Override

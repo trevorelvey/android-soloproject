@@ -38,6 +38,23 @@ public class ApiService {
         call.enqueue(callback);
     }
 
+    public static void searchClubs(String query, Callback callback) {
+        String API_KEY = Constants.API_KEY;
+
+        OkHttpClient client = new OkHttpClient();
+
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.LEAGUE_URL).newBuilder();
+        urlBuilder.addQueryParameter("team", query);
+        String url = urlBuilder.build().toString();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        Call call = client.newCall(request);
+        call.enqueue(callback);
+    }
+
     public ArrayList<Club> processResults(Response response) {
         ArrayList<Club> clubs = new ArrayList<>();
 
