@@ -2,6 +2,9 @@ package com.epicodus.eredivisie;
 
 public class Constants {
 
+    public static final String EXTRA_KEY_POSITION = "position";
+    public static final String EXTRA_KEY_CLUBS = "clubs";
+
     //API
     public static final String API_KEY = BuildConfig.API_KEY;
     public static final String LEAGUE_URL = "http://api.football-data.org/v1/soccerseasons/404/teams";

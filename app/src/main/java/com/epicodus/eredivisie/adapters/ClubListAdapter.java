@@ -2,6 +2,9 @@ package com.epicodus.eredivisie.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +12,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.epicodus.eredivisie.Constants;
 import com.epicodus.eredivisie.R;
 import com.epicodus.eredivisie.models.Club;
 import com.epicodus.eredivisie.ui.ClubDetailActivity;
+import com.epicodus.eredivisie.ui.ClubDetailFragment;
 import com.squareup.picasso.Picasso;
 import org.parceler.Parcels;
 
@@ -52,23 +57,41 @@ public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.ClubVi
         @Bind(R.id.clubNameTextView)
         TextView mClubNameTextView;
         private Context mContext;
-
+        private int mOrientation;
+        private Integer mPosition;
 
         public ClubViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            mOrientation = itemView.getResources().getConfiguration().orientation;
+
+            if (mOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                createDetailFragment(0);
+            }
+
             itemView.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
-                    int itemPosition = getLayoutPosition();
+                    mPosition = getLayoutPosition();
+
+                    if(mOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        createDetailFragment(mPosition);
+                    } else {
                     Intent intent = new Intent(mContext, ClubDetailActivity.class);
-                    intent.putExtra("position", itemPosition + "");
-                    intent.putExtra("clubs", Parcels.wrap(mClubs));
+                    intent.putExtra(Constants.EXTRA_KEY_POSITION, mPosition);
+                    intent.putExtra(Constants.EXTRA_KEY_CLUBS, Parcels.wrap(mClubs));
                     mContext.startActivity(intent);
                 }
             });
+        }
+
+        private void createDetailFragment(int position) {
+            ClubDetailFragment detailFragment = ClubDetailFragment.newInstance(mClubs, position);
+            FragmentTransaction ft = ((FragmentActivity) mContext).getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.clubDetailContainer, detailFragment);
+            ft.commit();
         }
 
         public void bindClub(Club club) {
