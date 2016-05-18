@@ -42,7 +42,7 @@ public class MainActivity extends ActionBarActivity {
 //    @Bind(R.id.buttonFixtures) Button mButtonFixtures;
 //    @Bind(R.id.buttonClubs) Button mButtonClubs;
 //    @Bind(R.id.websiteButton) Button mWebsiteButton;
-//    @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
+    @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
 //    @Bind(R.id.savedFixtureButton) Button mSavedFixtureButton;
     private ValueEventListener mUserRefListener;
     private Firebase mUserRef;
@@ -106,7 +106,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-//                mWelcomeTextView.setText("Hi, " + user.getUsername() + "!");
+                mWelcomeTextView.setText("Hi, " + user.getUsername() + "!");
             }
 
             @Override
@@ -136,7 +136,7 @@ public class MainActivity extends ActionBarActivity {
 
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getSupportActionBar().setTitle("Navigation!");
+                getSupportActionBar().setTitle("Eredivisie");
                 invalidateOptionsMenu();
             }
 
