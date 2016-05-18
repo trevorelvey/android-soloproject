@@ -50,7 +50,7 @@
                 android:value=".ui.ClubActivity" />
         </activity>
         <activity android:name=".ui.FixtureDetailActivity" />
-        <activity android:name=".ui.SavedFixtureListActivity"></activity>
+        <activity android:name=".ui.SavedFixtureListActivity" />
     </application>
 
 </manifest>

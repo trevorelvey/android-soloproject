@@ -1,23 +1,8 @@
 <resources>
     <string name="app_name">Eredivisie</string>
-    <string-array name="favorite_teams">
-        <item>Aalesund</item>
-        <item>Bodø/Glimt</item>
-        <item>Brann</item>
-        <item>Haugesund</item>
-        <item>Lillestrom</item>
-        <item>Molde</item>
-        <item>Odd</item>
-        <item>Rosenborg</item>
-        <item>Sarpsborg 08</item>
-        <item>Sogndal</item>
-        <item>Stabæk</item>
-        <item>Start</item>
-        <item>Strømgodset</item>
-        <item>Tromsø</item>
-        <item>Vålerenga</item>
-    </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
