@@ -1,47 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    tools:context=".ui.TableActivity">
+    android:layout_height="100dp">
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:id="@+id/tableLayout1">
+    <TableRow>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/clubTableImageView"
+            android:src="@drawable/waffles"
+            android:scaleType="centerCrop"/>
 
-        <TableRow>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:background="#ffffff"
-                android:layout_height="match_parent"
-                />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="#ffffff"
+            android:layout_height="match_parent"
+            />
 
             <TextView
-                android:layout_width="140dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/clubTableTextView"
                 android:textSize="16dp"
                 android:text="Club Name"
-                android:textStyle="bold"
-                android:paddingLeft="60dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimary"
                 android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:text="GP"
-                android:paddingLeft="15dp"
-                android:textStyle="bold"
                 android:id="@+id/gamesPlayedTextView"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
@@ -53,8 +44,6 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:text="Pts"
-                android:textStyle="bold"
-                android:paddingLeft="15dp"
                 android:id="@+id/pointsTextView"
                 android:layout_gravity="center"
                 />
@@ -62,8 +51,6 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:textStyle="bold"
                 android:text="GF"
                 android:id="@+id/goalsForTextView"
                 android:layout_gravity="center"/>
@@ -71,8 +58,6 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:textStyle="bold"
                 android:text="GA"
                 android:id="@+id/goalsAgainstTextView"
                 android:layout_gravity="center"/>
@@ -80,18 +65,8 @@
             <TextView
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:textStyle="bold"
                 android:text="GD"
                 android:id="@+id/goalsDiffTextView"
                 android:layout_gravity="center"/>
-        </TableRow>
-    </TableLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tableLayout1"
-        android:id="@+id/recyclerView" />
-
-</RelativeLayout>
+    </TableRow>
+</TableLayout>

@@ -5,6 +5,7 @@ import android.util.Log;
 import com.epicodus.eredivisie.Constants;
 import com.epicodus.eredivisie.models.Club;
 import com.epicodus.eredivisie.models.Fixture;
+import com.epicodus.eredivisie.models.Table;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -121,5 +122,51 @@ public class ApiService {
             e.printStackTrace();
         }
         return fixtures;
+    }
+
+    public static void displayTable(Callback callback) {
+        String API_KEY = Constants.API_KEY;
+
+        OkHttpClient client = new OkHttpClient();
+
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.LEAGUE_TABLE).newBuilder();
+        String url = urlBuilder.build().toString();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        Call call = client.newCall(request);
+        call.enqueue(callback);
+    }
+
+    public ArrayList<Table> listTable(Response response) {
+        ArrayList<Table> tables = new ArrayList<>();
+
+        try {
+            String jsonData = response.body().string();
+            if(response.isSuccessful()) {
+                JSONObject dataJSON = new JSONObject(jsonData);
+                JSONArray standingJSON = dataJSON.getJSONArray("standing");
+                for (int i = 0; i < standingJSON.length(); i++) {
+                    JSONObject tableJSON = standingJSON.getJSONObject(i);
+                    String rank = tableJSON.getString("position");
+                    String team = tableJSON.getString("teamName");
+                    String playedGames = tableJSON.getString("playedGames");
+                    String tableCrest = tableJSON.getString("crestURI");
+                    String points = tableJSON.getString("points");
+                    String goalsFor = tableJSON.getString("goals");
+                    String goalsAgainst = tableJSON.getString("goalsAgainst");
+                    String goalDifferential = tableJSON.getString("goalDifference");
+                    Table table = new Table(rank, team, playedGames, tableCrest, points, goalsFor, goalsAgainst, goalDifferential);
+                    tables.add(table);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return tables;
     }
 }

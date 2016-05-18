@@ -9,6 +9,7 @@ public class Constants {
     public static final String API_KEY = BuildConfig.API_KEY;
     public static final String LEAGUE_URL = "http://api.football-data.org/v1/soccerseasons/404/teams";
     public static final String LEAGUE_FIXTURES = "http://api.football-data.org/v1/soccerseasons/404/fixtures";
+    public static final String LEAGUE_TABLE = "http://api.football-data.org/v1/soccerseasons/404/leagueTable";
 
     //FIREBASE
     public static final String FIREBASE_URL = BuildConfig.FIREBASE_ROOT_URL;

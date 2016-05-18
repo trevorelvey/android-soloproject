@@ -41,44 +41,44 @@ public class ClubListFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
-    @Override
-    public View on CreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_club_list, container, false);
-        ButterKnife.bind(this, view);
+//    @Override
+//    public View on CreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        View view = inflater.inflate(R.layout.fragment_club_list, container, false);
+//        ButterKnife.bind(this, view);
+//
+//        if () {
+//            getClubs();
+//        }
+//        return view;
+//    }
 
-        if () {
-            getClubs();
-        }
-        return view;
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.menu_search, menu);
-
-        MenuItem menuItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                ArrayList<Club> clubs = searchClubs(query);
-                mAdapter = new ClubListAdapter(getActivity(), clubs);
-                mRecyclerView.setAdapter(mAdapter);
-                RecyclerView.LayoutManager layoutManager =
-                        new LinearLayoutManager(getActivity());
-                mRecyclerView.setLayoutManager(layoutManager);
-                mRecyclerView.setHasFixedSize(true);
-                return false;
-            }
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
-        return true;
-    }
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        super.onCreateOptionsMenu(menu, inflater);
+//        inflater.inflate(R.menu.menu_search, menu);
+//
+//        MenuItem menuItem = menu.findItem(R.id.action_search);
+//        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+//
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                ArrayList<Club> clubs = searchClubs(query);
+//                mAdapter = new ClubListAdapter(getActivity(), clubs);
+//                mRecyclerView.setAdapter(mAdapter);
+//                RecyclerView.LayoutManager layoutManager =
+//                        new LinearLayoutManager(getActivity());
+//                mRecyclerView.setLayoutManager(layoutManager);
+//                mRecyclerView.setHasFixedSize(true);
+//                return false;
+//            }
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                return false;
+//            }
+//        });
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

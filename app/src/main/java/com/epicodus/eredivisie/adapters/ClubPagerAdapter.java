@@ -20,7 +20,7 @@ public class ClubPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return ClubDetailFragment.newInstance(mClubs.get(position));
+        return ClubDetailFragment.newInstance(mClubs, position);
     }
 
     @Override

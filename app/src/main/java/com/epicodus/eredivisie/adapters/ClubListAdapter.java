@@ -83,6 +83,7 @@ public class ClubListAdapter extends RecyclerView.Adapter<ClubListAdapter.ClubVi
                     intent.putExtra(Constants.EXTRA_KEY_POSITION, mPosition);
                     intent.putExtra(Constants.EXTRA_KEY_CLUBS, Parcels.wrap(mClubs));
                     mContext.startActivity(intent);
+                    }
                 }
             });
         }
