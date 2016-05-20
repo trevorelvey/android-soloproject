@@ -72,28 +72,19 @@ public class MainActivity extends ActionBarActivity {
         addDrawerItems();
         setupDrawer();
 
-//        mButtonTable.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, TableActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
+
 //        mButtonFixtures.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, FixtureActivity.class);
-//                startActivity(intent);
+
 //            }
 //        });
 //
 //        mButtonClubs.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, ClubActivity.class);
-//                startActivity(intent);
-//            }
+
+//            }//            public void onClick(View v) {
+
 //        });
 //
 //        mWebsiteButton.setOnClickListener(this);
@@ -125,7 +116,25 @@ public class MainActivity extends ActionBarActivity {
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "Time for an upgrade!", Toast.LENGTH_SHORT).show();
+                String page = ((TextView)view).getText().toString();
+//                Toast.makeText(MainActivity.this, page, "Time for an upgrade!", Toast.LENGTH_SHORT).show();
+                switch (page){
+                    case "League Table":
+                        Intent intent = new Intent(MainActivity.this, TableActivity.class);
+                        startActivity(intent);
+                        break;
+                    default:
+                        break;
+                    case "Fixtures":
+                        Intent intent2 = new Intent(MainActivity.this, FixtureActivity.class);
+                        startActivity(intent2);
+                        break;
+                    case "Clubs":
+                        Intent intent3 = new Intent(MainActivity.this, ClubActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                }
             }
         });
     }
