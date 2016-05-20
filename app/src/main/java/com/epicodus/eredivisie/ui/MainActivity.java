@@ -38,12 +38,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends ActionBarActivity {
-//    @Bind(R.id.buttonTable) Button mButtonTable;
-//    @Bind(R.id.buttonFixtures) Button mButtonFixtures;
-//    @Bind(R.id.buttonClubs) Button mButtonClubs;
-//    @Bind(R.id.websiteButton) Button mWebsiteButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
-//    @Bind(R.id.savedFixtureButton) Button mSavedFixtureButton;
     private ValueEventListener mUserRefListener;
     private Firebase mUserRef;
     private SharedPreferences mSharedPreferences;
@@ -72,23 +67,6 @@ public class MainActivity extends ActionBarActivity {
         addDrawerItems();
         setupDrawer();
 
-
-//        mButtonFixtures.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-
-//            }
-//        });
-//
-//        mButtonClubs.setOnClickListener(new View.OnClickListener() {
-//            @Override
-
-//            }//            public void onClick(View v) {
-
-//        });
-//
-//        mWebsiteButton.setOnClickListener(this);
-
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mUId = mSharedPreferences.getString(Constants.KEY_UID, null);
         mUserRef = new Firebase(Constants.FIREBASE_URL_USERS).child(mUId);
@@ -104,8 +82,6 @@ public class MainActivity extends ActionBarActivity {
             public void onCancelled(FirebaseError firebaseError) {
             }
         });
-
-//        mSavedFixtureButton.setOnClickListener(this);
     }
 
     private void addDrawerItems() {
@@ -117,7 +93,6 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String page = ((TextView)view).getText().toString();
-//                Toast.makeText(MainActivity.this, page, "Time for an upgrade!", Toast.LENGTH_SHORT).show();
                 switch (page){
                     case "League Table":
                         Intent intent = new Intent(MainActivity.this, TableActivity.class);
@@ -132,6 +107,15 @@ public class MainActivity extends ActionBarActivity {
                     case "Clubs":
                         Intent intent3 = new Intent(MainActivity.this, ClubActivity.class);
                         startActivity(intent3);
+                        break;
+                    case "My Fixtures":
+                        Intent intent4 = new Intent(MainActivity.this, SavedFixtureListActivity.class);
+                        startActivity(intent4);
+                        break;
+                    case "Official Website":
+                        Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("http://www.eredivisie.nl/"));
+                        startActivity(webIntent);
                         break;
 
                 }
@@ -174,21 +158,18 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.menu_main, menu);
-//        return true;
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-//        if (id == R.id.action_logout) {
-//            logout();
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
+        if (id == R.id.action_logout) {
+            logout();
+            return true;
+        }
         if (id == R.id.action_settings) {
             return true;
         }
@@ -210,17 +191,4 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
         finish();
     }
-
-//    @Override
-//    public void onClick(View v) {
-//        if (v == mWebsiteButton) {
-//            Intent webIntent = new Intent(Intent.ACTION_VIEW,
-//                    Uri.parse("http://www.eredivisie.nl/"));
-//            startActivity(webIntent);
-//        }
-//        if (v == mSavedFixtureButton) {
-//            Intent intent = new Intent(MainActivity.this, SavedFixtureListActivity.class);
-//            startActivity(intent);
-//        }
-//    }
 }

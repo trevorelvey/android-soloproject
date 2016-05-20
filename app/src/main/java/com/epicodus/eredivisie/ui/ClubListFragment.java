@@ -42,17 +42,6 @@ public class ClubListFragment extends Fragment {
     }
 
 //    @Override
-//    public View on CreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.fragment_club_list, container, false);
-//        ButterKnife.bind(this, view);
-//
-//        if () {
-//            getClubs();
-//        }
-//        return view;
-//    }
-
-//    @Override
 //    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 //        super.onCreateOptionsMenu(menu, inflater);
 //        inflater.inflate(R.menu.menu_search, menu);
