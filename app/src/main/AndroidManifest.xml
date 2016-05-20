@@ -50,7 +50,11 @@
                 android:value=".ui.ClubActivity" />
         </activity>
         <activity android:name=".ui.FixtureDetailActivity" />
-        <activity android:name=".ui.SavedFixtureListActivity" />
+        <activity android:name=".ui.SavedFixtureListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -85,7 +85,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void addDrawerItems() {
-        String[] osArray = { "League Table", "Fixtures", "Clubs", "My Fixtures", "Official Website"};
+        String[] osArray = { "League Table", "Fixtures", "My Fixtures", "Official Website"};
+        // (Reinsert '"Clubs", '
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
 
@@ -104,10 +105,10 @@ public class MainActivity extends ActionBarActivity {
                         Intent intent2 = new Intent(MainActivity.this, FixtureActivity.class);
                         startActivity(intent2);
                         break;
-                    case "Clubs":
-                        Intent intent3 = new Intent(MainActivity.this, ClubActivity.class);
-                        startActivity(intent3);
-                        break;
+//                    case "Clubs":
+//                        Intent intent3 = new Intent(MainActivity.this, ClubActivity.class);
+//                        startActivity(intent3);
+//                        break;
                     case "My Fixtures":
                         Intent intent4 = new Intent(MainActivity.this, SavedFixtureListActivity.class);
                         startActivity(intent4);
